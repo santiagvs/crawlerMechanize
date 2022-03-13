@@ -21,7 +21,6 @@ module Crawler
           })
         end
         
-        binding.pry
         page_num += 1
         page = agent.get("#{URL_HOST}/page/#{page_num}/")
       end
