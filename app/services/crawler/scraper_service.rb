@@ -18,7 +18,7 @@ module Crawler
         loop do
           quote_selector = current_page.css('div.quote')
 
-          data_page(quote_selector, quotes)
+          get_page_data(quote_selector, quotes)
 
           break if page_ended?(quotes, page_num)
 
@@ -29,7 +29,7 @@ module Crawler
         quotes
       end
 
-      def data_page(quote_selector, quotes)
+      def get_page_data(quote_selector, quotes)
         quote_selector.each do |quote|
           quotes.push(
             {
